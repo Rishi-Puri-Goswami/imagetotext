@@ -119,6 +119,10 @@ app.post("/ocr", upload.single("pdf"), async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("PDF OCR Server is running.");
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`PDF OCR Server running on http://localhost:${PORT}`);
