@@ -7,7 +7,9 @@ import fs from "fs";
 import { createWorker } from "tesseract.js";
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173",
+}));
 app.use(express.json());
 
 // Multer Upload
