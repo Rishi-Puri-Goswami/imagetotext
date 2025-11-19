@@ -1,4 +1,8 @@
 {
+ "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
   "type": "module",
   "dependencies": {
     "@types/pdf-image": "^2.0.4",
