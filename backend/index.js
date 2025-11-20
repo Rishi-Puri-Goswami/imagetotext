@@ -8,7 +8,7 @@ import { createWorker } from "tesseract.js";
 
 const app = express();
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173" , "https://startwith.live"] // Adjust as needed,
 }));
 app.use(express.json());
 
@@ -34,6 +34,7 @@ app.get("/", (req, res) => {
 });
 
 // MAIN ENDPOINT
+
 app.post("/ocr", upload.single("pdf"), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No PDF uploaded" });
 
